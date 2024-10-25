@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomePage } from './pages/home/home.page';
 import { ProductsPage } from './pages/products/products.page';
 import { TitleComponent } from './components/title/title.component';
@@ -11,6 +11,8 @@ import { CardSelectCategoryComponent } from './components/card-select-category/c
 import { BannerPromoComponent } from './components/banner-promo/banner-promo.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
 import { SearchProductComponent } from './components/search-product/search-product.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { SearchProductComponent } from './components/search-product/search-produ
     CardSelectCategoryComponent,
     BannerPromoComponent,
     CardProductComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbCollapseModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
