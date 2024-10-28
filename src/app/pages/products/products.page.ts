@@ -34,11 +34,7 @@ export class ProductsPage implements OnInit {
   }
 
   getImageUrl(nameImage: string): string {
-    console.log('`${this.url}/uploads/${nameImage}`', `${this.url}/uploads/${nameImage}`)
     return `${this.url}/uploads/${nameImage}`;
-  }
-  get imageUrl(): (nameImage: string) => string {
-    return (nameImage: string) => `${this.url}/uploads/${nameImage}`;
   }
 
   private getProductList(id_product_category: number): void {
