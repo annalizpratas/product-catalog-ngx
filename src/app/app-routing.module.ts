@@ -6,7 +6,8 @@ import { ProductsPage } from './pages/products/products.page';
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', component: HomePage},
-  { path: 'pratas', component: ProductsPage},
+  { path: 'pratas', component: ProductsPage },
+  { path: 'pratas/:id_product_category', component: ProductsPage},
 ];
 
 

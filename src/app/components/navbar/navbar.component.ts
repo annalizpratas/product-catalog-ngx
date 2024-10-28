@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  isCollapsed = false;
+  isCollapsed = true;
 
   menuList = [];
 
