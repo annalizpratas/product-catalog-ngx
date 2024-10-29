@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { environment } from 'src/environment';
 
@@ -17,6 +18,7 @@ export class ProductsPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private loading: LoadingService,
     private productsService: ProductService
   ) {}
 
@@ -38,24 +40,30 @@ export class ProductsPage implements OnInit {
   }
 
   private getProductList(id_product_category: number): void {
+    this.loading.show();
+
     this.productsService.getProduct(false, id_product_category).subscribe(
       (data) => {
         this.productList = data.response;
         this.msgError = '';
+        this.loading.hide();
       },
       (error) => {
         console.error('Erro ao listar produtos:', error);
         this.msgError = error?.error?.message || 'Erro ao listar produtos';
         this.dismissError();
         this.getProductListDefault();
+        this.loading.hide();
       }
     );
   }
 
   private getProductListDefault(): void {
+    this.loading.show();
+
     this.productsService.getProduct(false).subscribe((data) => {
       this.productList = data.response;
-      console.log('this.productList', this.productList);
+      this.loading.hide();
     });
   }
 

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {
-
+  title = 'CONHEÇA AS NOSSAS PRATAS';
 }

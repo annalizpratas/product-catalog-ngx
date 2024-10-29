@@ -13,6 +13,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import { SearchProductComponent } from './components/search-product/search-product.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     BannerPromoComponent,
     CardProductComponent,
     SearchProductComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
