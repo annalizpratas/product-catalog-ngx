@@ -1,0 +1,17 @@
+.banner-promo {
+  width: 100vw; /* Full viewport width */
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  background-color: #61513f;
+}
+
+.banner-small {
+  height: 80px;
+}
+
+.banner-large {
+  height: 200px;
+}
