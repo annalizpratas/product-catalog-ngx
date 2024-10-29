@@ -4,10 +4,16 @@
   {{msgError}}
 </div>
 
+<app-title [title]="'ENCONTRE SUA PRATA'"></app-title>
+
+<app-search-product
+  (searchProducName)="getProductListName($event)"
+></app-search-product>
+
 <div class="row mt-5">
   <ng-container *ngFor="let product of productList; let index = index">
     <div
-      class="col-6"
+      class="col-6 col-sm-6 col-md-4 col-lg-3"
       [ngClass]=" index % 2 === 0 ? 'remove-padding-right': 'remove-padding-left'"
     >
       <div class="card">

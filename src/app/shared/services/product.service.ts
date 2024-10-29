@@ -25,6 +25,19 @@ export class ProductService {
     return this.http.get<ResponseModel<ProductModel[]>>(`${url}`, { params });
   }
 
+  getProductName(is_promo: boolean, name_product?: string): Observable<ResponseModel<ProductModel[]>> {
+    const url = name_product
+      ? `${this.url}/product-name-list/${name_product}`
+      : `${this.url}/product-list`;
+
+    const params: any = {};
+    if (is_promo !== undefined) {
+      params.is_promo = is_promo;
+    }
+
+    return this.http.get<ResponseModel<ProductModel[]>>(`${url}`, { params });
+  }
+
   getProductStatus(): Observable<ResponseModel<{id: number, name: string}[]>> {
     return this.http.get<ResponseModel<{id: number, name: string}[]>>(`${this.url}/product-status-list`);
   }
